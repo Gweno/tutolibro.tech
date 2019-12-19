@@ -1,2 +1,3 @@
 This is another line for testing GIT
 This is a line to test version control with GIT
+Another line of text, just for testing
