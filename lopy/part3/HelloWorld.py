@@ -29,12 +29,29 @@ def write_my_text(my_text):
 
 def write_1_to_10():
     """Write what I want in in Cell A1"""
-    
     for each_number in range(10):
-        active_sheet.getCellByPosition(1,each_number).String = each_number + 1
+        print("loop at: ", each_number)        
+        active_sheet.getCellByPosition(1,each_number).Value = each_number + 1
+        
+def write_1_to_10_test():
+    """Write what I want in in Cell A1"""
 
+    NumberFormats = model.NumberFormats
+    locale = model.CharLocale
+
+    for each_number in range(10):
+        active_sheet.getCellByPosition(1,each_number).Value = each_number + 1
+        cell_before = active_sheet.getCellByPosition(1,each_number)
+        active_sheet.getCellByPosition(2,each_number).Value = cell_before.Value  + 10
+        # ~ active_sheet.getCellByPosition(3,each_number).String = str(cell_before.NumberFormats)
+
+def check_cell():
+    """Loop through all non-empty cells of a column and do somthing with it"""
+    
+    
 def main(*args):
     """Our main program, that call other functions in the order we want"""
     
     write_my_text("My first macro in Python!")
     write_1_to_10()
+    print("All done!")
